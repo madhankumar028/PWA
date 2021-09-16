@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Native push</title>
+  <link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32" />
+  <style>
+    .fab {
+      width: 56px;
+      height: 56px;
+      background: #546e7a;
+      border-radius: 50%;
+      box-shadow: 0 0 4px rgb(0 0 0 / 14%), 0 4px 8px rgb(0 0 0 / 28%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin: 25px;
+    }
+    .toast__msg {
+      max-width: 290px;
+      min-height: 50px;
+      line-height: 50px;
+      color: #fff;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-transform: initial;
+      margin-bottom: 10px;
+      background-color: #404040;
+      border-radius: 3px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+      word-break: break-all;
+      font-size: 15px;
+      font-weight: 400;
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+      will-change: transform;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+    .toast__msg--show {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    .send__notification {
+      position: absolute;
+      top: 45%;
+      left: 45%;
+    }
+    #send-notification {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px;
+      min-width: 164px;
+      min-height: 24px;
+      width: auto;
+      border-color: transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      border-style: solid;
+      text-transform: capitalize;
+    }
+    #send-notification:hover {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+    }
+  </style>
+</head>
+<body>
+  <div class="send__notification">
+    <button id="send-notification">Send Notification</button>
+  </div>
+  <div class="fab fab__push">
+    <img class="fab__image" src="./images/push-off.png" alt="Push Notification" />
+  </div>
+  <div class="toast__msg"></div>
+  <script src="./js/main.js"></script>
+  <script src="./js/push.js"></script>
+</body>
+</html>
